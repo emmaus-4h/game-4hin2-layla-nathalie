@@ -9,8 +9,18 @@ Gemaakt door:
 *korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
 
 ## Mijn planning
-Werk de planning af van boven naar beneden<br>
-Geef aan met [x] welke onderdelen af zijn
+[x]stap 1. bedenk de planing 
+[ ]stap 2. bedenk en maak een karakter/poppetje 
+[ ]stap 3. bedenk en maak een omgeving/ obstakels
+[ ]stap 4. bedenk en maak vijanden
+[ ]stap 5. laat de karakters en vijanden bewegen
+[ ]stap 6. maak de munten in het spel en zet ze erin
+[ ]stap 7. maak een game-over scherm
+[ ]stap 8. maak een uitlegscherm
+[ ]stap 9. zorg dat de score beweegt als je een munt aanraakt
+[ ]stap 10. als je de vijand aanraakt is het game-over
+[ ]stap 11. details afmaken
+[ ]stap 12. zorg dat alles duidelijk is en alles werkt
 
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
