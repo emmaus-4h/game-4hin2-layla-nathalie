@@ -6,7 +6,7 @@ Gemaakt door:
 - *Nathalie Hardenberg*
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*het doel is dat je naar de finish gaat en de munten verzameld zonder opstakels en vijanden aan te raken. springen, duiken en lopen naar de finish toe, terwijl je de vijanden en obstakels vermijdt.*
 
 ## Mijn planning
 [x]stap 1. bedenk de planing 
