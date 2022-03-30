@@ -9,18 +9,18 @@ Gemaakt door:
 *het doel is dat je naar de finish gaat en de munten verzameld zonder opstakels en vijanden aan te raken. springen, duiken en lopen naar de finish toe, terwijl je de vijanden en obstakels vermijdt.*
 
 ## Mijn planning
-[x]stap 1. bedenk de planing 
-[ ]stap 2. bedenk en maak een karakter/poppetje 
-[ ]stap 3. bedenk en maak een omgeving/ obstakels
-[ ]stap 4. bedenk en maak vijanden
-[ ]stap 5. laat de karakters en vijanden bewegen
-[ ]stap 6. maak de munten in het spel en zet ze erin
-[ ]stap 7. maak een game-over scherm
-[ ]stap 8. maak een uitlegscherm
-[ ]stap 9. zorg dat de score beweegt als je een munt aanraakt
-[ ]stap 10. als je de vijand aanraakt is het game-over
-[ ]stap 11. details afmaken
-[ ]stap 12. zorg dat alles duidelijk is en alles werkt
+- [x]stap 1. bedenk de planing 
+- [ ]stap 2. bedenk en maak een karakter/poppetje 
+- [ ]stap 3. bedenk en maak een omgeving/ obstakels
+- [ ]stap 4. bedenk en maak vijanden
+- [ ]stap 5. laat de karakters en vijanden bewegen
+- [ ]stap 6. maak de munten in het spel en zet ze erin
+- [ ]stap 7. maak een game-over scherm
+- [ ]stap 8. maak een uitlegscherm
+- [ ]stap 9. zorg dat de score beweegt als je een munt aanraakt
+- [ ]stap 10. als je de vijand aanraakt is het game-over
+- [ ]stap 11. details afmaken
+- [ ]stap 12. zorg dat alles duidelijk is en alles werkt
 
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
