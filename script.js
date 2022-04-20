@@ -21,7 +21,7 @@ const KEY_UP = 38;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 600; // x-positie van vijand
+var vijandX = 0; // x-positie van vijand
 var vijandY = 500; // y-positie van vijand
 
 /* ********************************************* */
@@ -33,21 +33,21 @@ var vijandY = 500; // y-positie van vijand
  */
 var beweegAlles = function () {
   // speler
-if (keyIsDown (KEY_RIGHT)) {
-  spelerX = spelerX + 1;
+  if (keyIsDown (KEY_RIGHT)) {
+  spelerX = spelerX + 3;
 }
-if (keyIsDown (KEY_LEFT)) {
-  spelerX = spelerX - 1;
+  if (keyIsDown (KEY_LEFT)) {
+  spelerX = spelerX - 3;
 }
-if (keyIsDown (KEY_UP)) {
-  spelerY = spelerY - 1;
+  if (keyIsDown (KEY_UP)) {
+  spelerY = spelerY - 3;
 }
-if (keyIsDown (KEY_DOWN)) {
-  spelerY = spelerY + 1;
+  if (keyIsDown (KEY_DOWN)) {
+  spelerY = spelerY + 3;
 }
 
   // vijand
-
+  vijandX = vijandX + 4;
   // kogel
 };
 
