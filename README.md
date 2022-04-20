@@ -11,7 +11,7 @@ Gemaakt door:
 ## Mijn planning
 - [x]stap 1. bedenk de planing 
 - [ ]stap 2. bedenk en maak een karakter/poppetje
-- [ ]stap 3. laat het karakter bewegen
+- [x]stap 3. laat het karakter bewegen
 - [ ]stap 4. maak de achtergrond en de hulpblokken
 - [ ]stap 5. bedenk en maak vijanden
 - [ ]stap 6. laat de vijanden bewegen
