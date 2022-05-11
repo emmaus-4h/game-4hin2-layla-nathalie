@@ -13,9 +13,9 @@ Gemaakt door:
 - [ ]stap 2. bedenk en maak een karakter/poppetje
 - [x]stap 3. laat het karakter bewegen
 - [ ]stap 4. maak de achtergrond en de hulpblokken
-- [ ]stap 5. bedenk en maak vijanden
+- [x]stap 5. bedenk en maak vijanden
 - [ ]stap 6. laat de vijanden bewegen
-- [ ]stap 7. maak de munten in het spel en zet ze erin
+- [x]stap 7. maak de munten in het spel en zet ze erin
 - [ ]stap 8. maak een punten telling
 - [ ]stap 9. zorg dat de score beweegt als je een munt aanraakt
 - [ ]stap 10. maak een game-over scherm

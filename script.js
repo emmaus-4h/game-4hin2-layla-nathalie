@@ -24,6 +24,9 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 0; // x-positie van vijand
 var vijandY = 500; // y-positie van vijand
 
+var puntenX = 400;
+var puntenY = 400;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -59,9 +62,9 @@ var beweegAlles = function () {
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
   if (spelerX - vijandX < 50 && 
-      spelerX - vijandX < 50 &&
+      spelerX - vijandX > -50 &&
       spelerY - vijandY < 50 &&
-      spelerY - vijandY < 50) {
+      spelerY - vijandY > -50) {
     console.log("botsing")
     spelStatus = GAMEOVER;
   }
@@ -79,6 +82,7 @@ var tekenAlles = function () {
   // achtergrond
   fill("blue");
   rect(0, 0, 1280, 720);
+  
   // vijand
   fill("red");
   rect(vijandX - 25, vijandY - 25, 50, 50);
@@ -94,6 +98,8 @@ var tekenAlles = function () {
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
+  fill("yellow");
+  ellipse(puntenX, puntenY, 50, 50)
 
 };
 
