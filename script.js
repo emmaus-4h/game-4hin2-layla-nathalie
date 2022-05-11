@@ -54,8 +54,9 @@ var beweegAlles = function () {
   // vijand
   vijandX = vijandX + 4;
   // kogel
+    kogelY = kogelY - 1;   
   if(keyIsDown (32)){
-    kogelY = kogelX + 1;   
+    kogelY = spelerY;   
   }
 };
 
