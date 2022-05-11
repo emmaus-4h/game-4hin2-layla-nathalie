@@ -27,6 +27,8 @@ var vijandY = 500; // y-positie van vijand
 var puntenX = 400;
 var puntenY = 400;
 
+var kogelX = 575;
+var kogelY = 575;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -52,6 +54,9 @@ var beweegAlles = function () {
   // vijand
   vijandX = vijandX + 4;
   // kogel
+  if(keyIsDown (32)){
+    kogelY = kogelX + 1;   
+  }
 };
 
 /**
@@ -90,7 +95,9 @@ var tekenAlles = function () {
   ellipse(vijandX, vijandY, 10, 10);
 
   // kogel
-
+  fill("white");
+  rect(kogelX, kogelY, 30, 15 );
+  
   // speler
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
