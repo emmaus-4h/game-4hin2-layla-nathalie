@@ -53,7 +53,8 @@ var beweegAlles = function () {
   // kogel
     kogelY = kogelY - 1;   
   if(keyIsDown (32)){
-    kogelY = spelerY;   
+    kogelY = spelerY; 
+    kogelX = spelerX;  
   }
 };
 
