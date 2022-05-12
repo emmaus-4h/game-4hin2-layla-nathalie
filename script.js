@@ -56,6 +56,7 @@ var beweegAlles = function () {
     kogelY = spelerY; 
     kogelX = spelerX;  
   }
+  if(mouseIsPressed === true)
 };
 
 /**
