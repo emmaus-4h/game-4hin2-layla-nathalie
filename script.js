@@ -24,9 +24,6 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 0; // x-positie van vijand
 var vijandY = 500; // y-positie van vijand
 
-var puntenX = 400;
-var puntenY = 400;
-
 var kogelX = 575;
 var kogelY = 575;
 /* ********************************************* */
@@ -106,8 +103,7 @@ var tekenAlles = function () {
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
-  fill("yellow");
-  ellipse(puntenX, puntenY, 50, 50)
+ 
 
 };
 
