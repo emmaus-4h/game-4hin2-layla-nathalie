@@ -6,7 +6,7 @@ Gemaakt door:
 - *Nathalie Hardenberg*
 
 ### Beschrijving
-*het doel is dat je naar de finish gaat en de munten verzameld zonder opstakels en vijanden aan te raken. springen, duiken en lopen naar de finish toe, terwijl je de vijanden en obstakels vermijdt.*
+* probeer alle vijanden af te schieten voordat de vijanden jou raken. vijanden vallen naar beneden en jij moet ze proberen af te schieten*
 
 ## Mijn planning
 - [x]stap 1. bedenk de planing 

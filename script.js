@@ -1,4 +1,4 @@
-/* Game opdracht
+ /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
@@ -24,7 +24,7 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 0; // x-positie van vijand
 var vijandY = 500; // y-positie van vijand
 
-var kogelX = 575;
+var kogelX = 575; 
 var kogelY = 575;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
