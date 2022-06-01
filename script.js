@@ -9,10 +9,11 @@
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
-
+var aantal = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
+const UITLEG = 8;
 const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
 const KEY_DOWN = 40;
@@ -22,7 +23,7 @@ var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
 var vijandX = 600; // x-positie van vijand
-var vijandY = 200; // y-positie van vijand
+  var vijandY = 200; // y-positie van vijand
 
 var kogelX = 590; 
 var kogelY = 590;
@@ -65,13 +66,7 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-  if (spelerX - vijandX < 50 && 
-      spelerX - vijandX > -50 &&
-      spelerY - vijandY < 50 &&
-      spelerY - vijandY > -50) {
-    console.log("botsing")
-    spelStatus = GAMEOVER;
-  }
+  
     
   // botsing kogel tegen vijand
   if (kogelX - vijandX < 35 && 
@@ -120,6 +115,16 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
+  if (spelerX - vijandX < 50 && 
+      spelerX - vijandX > -50 &&
+      spelerY - vijandY < 50 &&
+      spelerY - vijandY > -50) {
+    console.log("botsing")
+    spelStatus = GAMEOVER;
+    aantal = aantal + 1;
+    console.log("botsing "+ aantal)
+    return true; 
+  }
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -154,9 +159,37 @@ function draw() {
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
+    console .log("spelen");
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
-
+    console.log("game over");
+    textSize(50);
+    fill("black");
+    text("game over, druk op enter voor uitleg", 100, 100);
+    if (keyIsDown(13)){//spatie
+     spelStatus = UITLEG;
+    }
   }
+   if (spelStatus === UITLEG) {
+    // teken uitleg-over scherm
+     console.log("uitleg");
+     textSize(30);
+     fill("yellow")
+     rect(0,0, 1280, 720);
+     fill("black");
+    
+     text("uitleg: probeer alle vijanden te raken, druk op spatie om opnieuw te beginnen", 100, 100);
+       
+    
+      if (keyIsDown(32)){//enter
+        spelerX = 400;
+         spelStatus = SPELEN;
+      }
+     
+     
 }
+  
+}
+
+
