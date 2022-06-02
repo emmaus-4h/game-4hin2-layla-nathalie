@@ -23,7 +23,7 @@ var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
 var vijandX = 600; // x-positie van vijand
-  var vijandY = 200; // y-positie van vijand
+var vijandY = 200; // y-positie van vijand
 
 var kogelX = 590; 
 var kogelY = 590;
