@@ -1,4 +1,4 @@
- /* Game opdracht
+  /* Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
@@ -23,10 +23,11 @@ var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
 var vijandX = 600; // x-positie van vijand
-  var vijandY = 200; // y-positie van vijand
+var vijandY = 200; // y-positie van vijand
 
 var kogelX = 590; 
 var kogelY = 590;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -90,11 +91,27 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   
   // vijand
-  fill("red");
-  rect(vijandX - 25, vijandY - 25, 50, 50);
-  fill("black")
-  ellipse(vijandX, vijandY, 10, 10);
-
+ var tekenVijand = function (){
+   fill("red");
+   rect(vijandX - 25, vijandY - 25, 50, 50);
+   fill("black")
+  ellipse(vijandX, vijandY, 10, 10);  
+ }
+  
+  console.log("voor while: vijandX = "+vijandX);
+  /* deze code hadden we eerst,
+ meneer van Geest vond die heel mooi en heeft daarom gezegd dat we hem in commentaar mochten laten staan, ook al was hij niet goed
+  while (vijandX < 1000) {
+    vijandY = 100;
+    while ( vijandY < 200){
+     tekenVijand (vijandX, vijandY);
+      vijandY = vijandY + 100;
+   };
+    vijandX = vijandX + 100;
+  };
+*/
+  console.log("na while: vijandX = "+vijandX);
+  
   // kogel
   fill("white");
   rect(kogelX, kogelY, 15, 30);
