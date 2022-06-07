@@ -24,6 +24,8 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600; // x-positie van vijand
 var vijandY = 200; // y-positie van vijand
+var vijand2X = 600;
+var vijand2Y = 300;
 
 var kogelX = 590; 
 var kogelY = 590;
@@ -90,14 +92,20 @@ var tekenAlles = function () {
   fill("blue");
   rect(0, 0, 1280, 720);
   
-  // vijand
+  // vijand1
  var tekenVijand = function (){
    fill("red");
    rect(vijandX - 25, vijandY - 25, 50, 50);
    fill("black")
   ellipse(vijandX, vijandY, 10, 10);  
  }
-  
+  // vijand2
+ var tekenVijand2 = function (){
+   fill("red");
+   rect(vijand2X - 25, vijand2Y - 25, 50, 50);
+   fill("black")
+  ellipse(vijand2X, vijand2Y, 10, 10);  
+ }
   console.log("voor while: vijandX = "+vijandX);
   /* deze code hadden we eerst,
  meneer van Geest vond die heel mooi en heeft daarom gezegd dat we hem in commentaar mochten laten staan, ook al was hij niet goed
@@ -110,6 +118,14 @@ var tekenAlles = function () {
     vijandX = vijandX + 100;
   };
 */
+  var rij1 =[1, 1, 1, 1];
+  var rij2 =[1, 1, 1, 1];
+  var rij3 =[1, 1, 1, 1];
+  for (var x = 0; x < rij1.length; x++) { 
+    tekenVijand(rij1[x], x, 0);
+    tekenVijand2(rij2[x], x, 1);
+    tekenVijand(rij3[x], x, 2);
+  }
   console.log("na while: vijandX = "+vijandX);
   
   // kogel
