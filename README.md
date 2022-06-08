@@ -10,38 +10,36 @@ Gemaakt door:
 
 ## Mijn planning
 - [x]stap 1. bedenk de planing 
-- [ ]stap 2. bedenk en maak een karakter/poppetje
+- [x]stap 2. bedenk en maak een karakter/poppetje
 - [x]stap 3. laat het karakter bewegen
-- [ ]stap 4. maak de achtergrond en de hulpblokken
+- [ ]stap 4. maak de achtergrond
 - [x]stap 5. bedenk en maak vijanden
 - [ ]stap 6. laat de vijanden bewegen
-- [x]stap 7. maak de munten in het spel en zet ze erin
 - [ ]stap 8. maak een punten telling
-- [ ]stap 9. zorg dat de score beweegt als je een munt aanraakt
-- [ ]stap 10. maak een game-over scherm
-- [ ]stap 11. maak een uitlegscherm
-- [ ]stap 12. als je de vijand aanraakt is het game-over
-- [ ]stap 13. details afmaken
-- [ ]stap 14. zorg dat alles duidelijk is en alles werkt
+- [x]stap 9. maak een game-over scherm
+- [x]stap 10. maak een uitlegscherm
+- [x]stap 11. als je de vijand aanraakt is het game-over
+- [ ]stap 12. details afmaken
+- [ ]stap 13. zorg dat alles duidelijk is en alles werkt
 
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
-- [ ] 2. teken speler
+- [x] 2. teken speler
         - Zet je code in de functie tekenAlles()
-- [ ] 3. beweeg speler
+- [x] 3. beweeg speler
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
-- [ ] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
+- [x] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
+- [x] x. teken een bal, kogel (als die in je spel zit)
 - [ ] x. beweeg de tegenspeler of je bal
 - [ ] x. zet punten op het scherm 
 - [ ] x. zorg dat je punten kunt scoren
 - [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] x. maak game-over-scherm
+- [x] x. maak uitlegscherm
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*

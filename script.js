@@ -22,20 +22,22 @@ const KEY_UP = 38;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 600; // x-positie van vijand
+var vijandX = 550; // x-positie van vijand
 var vijandY = 200; // y-positie van vijand
 
-var vijand2X = 700;
+var vijand2X = 650;
 var vijand2Y = 200;
 
-var vijand3X = 800;
+var vijand3X = 750;
 var vijand3Y = 200;
 
-var vijand4X = 900;
+var vijand4X = 450;
 var vijand4Y = 200;
 
 var kogelX = 590; 
 var kogelY = 590;
+
+var img; //plaatje 
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -95,6 +97,22 @@ var verwerkBotsing = function () {
     vijand2Y = vijand2Y - 400;
   }
 
+  if (kogelX - vijand3X < 50 && 
+      kogelX - vijand3X > -50 &&
+      kogelY - vijand3Y < 50 &&
+      kogelY - vijand3Y > -50) {
+    console.log("botsingmetkogel")
+    vijand3Y = vijand3Y - 400;
+  }
+
+  if (kogelX - vijand4X < 50 && 
+      kogelX - vijand4X > -50 &&
+      kogelY - vijand4Y < 50 &&
+      kogelY - vijand4Y > -50) {
+    console.log("botsingmetkogel")
+    vijand4Y = vijand4Y - 400;
+  }
+
   // update punten en health
 
 };
@@ -130,7 +148,7 @@ var tekenAlles = function () {
   ellipse(vijand3X, vijand3Y, 10, 10);  
   
  }  
-
+  
   //vijand4
   var tekenVijand4 = function (){
    fill("red");
@@ -138,7 +156,7 @@ var tekenAlles = function () {
    fill("black")
   ellipse(vijand4X, vijand4Y, 10, 10);  
  }
-  
+
   console.log("voor while: vijandX = "+vijandX);
   /* deze code hadden we eerst,
  meneer van Geest vond die heel mooi en heeft daarom gezegd dat we hem in commentaar mochten laten staan, ook al was hij niet goed
@@ -168,10 +186,9 @@ var tekenAlles = function () {
   rect(kogelX, kogelY, 15, 30);
   
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
+    fill("black");
   ellipse(spelerX, spelerY, 10, 10);
+  image(img, spelerX - 75, spelerY - 80 , 150 , 150);
 
   // punten en health
  
@@ -201,6 +218,14 @@ var checkGameOver = function () {
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
 
+/**
+ * preload
+ * deze functie wordt 1x uitgevoerd voor setup
+ * we laden hier de plaatjes
+ */
+function preload() {
+  img = loadImage('spacecraft.png');
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
