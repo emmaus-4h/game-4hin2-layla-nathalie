@@ -24,8 +24,9 @@ var spelerY = 600; // y-positie van speler
 
 var vijandX = 600; // x-positie van vijand
 var vijandY = 200; // y-positie van vijand
-var vijand2X = 600;
-var vijand2Y = 300;
+
+var vijand2X = 700;
+var vijand2Y = 200;
 
 var kogelX = 590; 
 var kogelY = 590;
@@ -80,6 +81,14 @@ var verwerkBotsing = function () {
     vijandY = vijandY - 400;
   }
 
+  if (kogelX - vijand2X < 50 && 
+      kogelX - vijand2X > -50 &&
+      kogelY - vijand2Y < 50 &&
+      kogelY - vijand2Y > -50) {
+    console.log("botsingmetkogel")
+    vijand2Y = vijand2Y - 400;
+  }
+
   // update punten en health
 
 };
@@ -120,11 +129,9 @@ var tekenAlles = function () {
 */
   var rij1 =[1, 1, 1, 1];
   var rij2 =[1, 1, 1, 1];
-  var rij3 =[1, 1, 1, 1];
   for (var x = 0; x < rij1.length; x++) { 
     tekenVijand(rij1[x], x, 0);
     tekenVijand2(rij2[x], x, 1);
-    tekenVijand(rij3[x], x, 2);
   }
   console.log("na while: vijandX = "+vijandX);
   
@@ -194,25 +201,25 @@ function draw() {
     }
     console .log("spelen");
   }
+  // teken game-over scherm
   if (spelStatus === GAMEOVER) {
-    // teken game-over scherm
     console.log("game over");
     textSize(50);
     fill("black");
-    text("game over, druk op enter voor uitleg", 100, 100);
-    if (keyIsDown(13)){//spatie
+    text("game over, druk op enter voor uitleg", 250, 350);
+    if (keyIsDown(13)){    //spatie
      spelStatus = UITLEG;
     }
   }
-   if (spelStatus === UITLEG) {
-    // teken uitleg-over scherm
-     console.log("uitleg");
-     textSize(30);
-     fill("yellow")
-     rect(0,0, 1280, 720);
-     fill("black");
-    
-     text("uitleg: probeer alle vijanden te raken, druk op spatie om opnieuw te beginnen", 100, 100);
+
+  // teken uitleg-over scherm   
+  if (spelStatus === UITLEG) {
+    console.log("uitleg");
+   textSize(30);
+    fill("yellow")
+    rect(0,0, 1280, 720);
+   fill("black");
+   text("uitleg: Probeer alle vijanden te raken met de kogel.\n Om je karakter te  bewegen gebruik de pijl toetsen.\n Door spatie te krijg je je kogel terug en door spatie los te laten schiet je hem af.\n Druk nu op spatie om opnieuw te beginnen", 200, 250);
        
     
       if (keyIsDown(32)){//enter
