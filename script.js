@@ -93,28 +93,28 @@ var verwerkBotsing = function () {
     punten = punten + 1;
   }
 
-  if (kogelX - vijand2X < 50 && 
-      kogelX - vijand2X > -50 &&
-      kogelY - vijand2Y < 50 &&
-      kogelY - vijand2Y > -50) {
+  if (kogelX - vijand2X < 35 && 
+      kogelX - vijand2X > -35 &&
+      kogelY - vijand2Y < 35 &&
+      kogelY - vijand2Y > -35) {
     console.log("botsingmetkogel")
     vijand2Y = vijand2Y - 400;
     punten = punten + 1; 
   }
 
-  if (kogelX - vijand3X < 50 && 
-      kogelX - vijand3X > -50 &&
-      kogelY - vijand3Y < 50 &&
-      kogelY - vijand3Y > -50) {
+  if (kogelX - vijand3X < 35 && 
+      kogelX - vijand3X > -35 &&
+      kogelY - vijand3Y < 35 &&
+      kogelY - vijand3Y > -35) {
     console.log("botsingmetkogel")
     vijand3Y = vijand3Y - 400;
     punten = punten + 1;
   }
 
-  if (kogelX - vijand4X < 50 && 
-      kogelX - vijand4X > -50 &&
-      kogelY - vijand4Y < 50 &&
-      kogelY - vijand4Y > -50) {
+  if (kogelX - vijand4X < 35 && 
+      kogelX - vijand4X > -35 &&
+      kogelY - vijand4Y < 35 &&
+      kogelY - vijand4Y > -35) {
     console.log("botsingmetkogel")
     vijand4Y = vijand4Y - 400;
     punten = punten + 1;
@@ -194,8 +194,8 @@ var tekenAlles = function () {
   
   // speler
     fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-  image(img, spelerX - 75, spelerY - 80 , 150 , 150);
+   ellipse(spelerX, spelerY, 10, 10);
+   image(img, spelerX - 75, spelerY - 80 , 150 , 150);
 
   // punten en health
  fill("yellow");
