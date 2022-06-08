@@ -39,6 +39,8 @@ var kogelY = 590;
 
 var img; //plaatje 
 
+var punten=0;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -68,6 +70,7 @@ var beweegAlles = function () {
     kogelY = spelerY; 
     kogelX = spelerX;  
   }
+   // punten
   
 };
 
@@ -87,6 +90,7 @@ var verwerkBotsing = function () {
       kogelY - vijandY > -35) {
     console.log("botsingmetkogel")
     vijandY = vijandY - 400;
+    punten = punten + 1;
   }
 
   if (kogelX - vijand2X < 50 && 
@@ -95,6 +99,7 @@ var verwerkBotsing = function () {
       kogelY - vijand2Y > -50) {
     console.log("botsingmetkogel")
     vijand2Y = vijand2Y - 400;
+    punten = punten + 1; 
   }
 
   if (kogelX - vijand3X < 50 && 
@@ -103,6 +108,7 @@ var verwerkBotsing = function () {
       kogelY - vijand3Y > -50) {
     console.log("botsingmetkogel")
     vijand3Y = vijand3Y - 400;
+    punten = punten + 1;
   }
 
   if (kogelX - vijand4X < 50 && 
@@ -111,6 +117,7 @@ var verwerkBotsing = function () {
       kogelY - vijand4Y > -50) {
     console.log("botsingmetkogel")
     vijand4Y = vijand4Y - 400;
+    punten = punten + 1;
   }
 
   // update punten en health
@@ -191,7 +198,9 @@ var tekenAlles = function () {
   image(img, spelerX - 75, spelerY - 80 , 150 , 150);
 
   // punten en health
- 
+ fill("yellow");
+  textSize(40);
+  text(punten, 100, 100);
 
 };
 
