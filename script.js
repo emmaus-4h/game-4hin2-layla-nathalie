@@ -37,7 +37,8 @@ var vijand4Y = 200;
 var kogelX = 590; 
 var kogelY = 590;
 
-var img; //plaatje 
+var img; //plaatje speler
+var img2;
 
 var punten=0;
 
@@ -134,17 +135,17 @@ var tekenAlles = function () {
   
   // vijand1
  var tekenVijand = function (){
-   fill("red");
-   rect(vijandX - 25, vijandY - 25, 50, 50);
    fill("black")
-  ellipse(vijandX, vijandY, 10, 10);  
+   ellipse(vijandX, vijandY, 10, 10);
+   image(img2, vijandX - 100, vijandY - 85, 200, 200);
  }
   // vijand2
  var tekenVijand2 = function (){
    fill("red");
    rect(vijand2X - 25, vijand2Y - 25, 50, 50);
    fill("black")
-  ellipse(vijand2X, vijand2Y, 10, 10);  
+   ellipse(vijand2X, vijand2Y, 10, 10); 
+   image(img2, vijandX - 50, vijandY - 85, 200, 200); 
  }
 
   //vijand3
@@ -152,7 +153,7 @@ var tekenAlles = function () {
    fill("red");
    rect(vijand3X - 25, vijand3Y - 25, 50, 50);
    fill("black")
-  ellipse(vijand3X, vijand3Y, 10, 10);  
+   ellipse(vijand3X, vijand3Y, 10, 10);  
   
  }  
   
@@ -161,7 +162,7 @@ var tekenAlles = function () {
    fill("red");
    rect(vijand4X - 25, vijand4Y - 25, 50, 50);
    fill("black")
-  ellipse(vijand4X, vijand4Y, 10, 10);  
+   ellipse(vijand4X, vijand4Y, 10, 10);  
  }
 
   console.log("voor while: vijandX = "+vijandX);
@@ -234,7 +235,9 @@ var checkGameOver = function () {
  */
 function preload() {
   img = loadImage('spacecraft.png');
+  img2 = loadImage('vijand.png');
 }
+
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
