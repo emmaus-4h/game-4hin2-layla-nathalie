@@ -22,17 +22,18 @@ const KEY_UP = 38;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 550; // x-positie van vijand
+var vijandX = 350; // x-positie van vijand
 var vijandY = 200; // y-positie van vijand
 
-var vijand2X = 650;
+var vijand2X = 500; 
 var vijand2Y = 200;
 
-var vijand3X = 750;
+var vijand3X = 650;
 var vijand3Y = 200;
 
-var vijand4X = 450;
+var vijand4X = 800;
 var vijand4Y = 200;
+
 
 var kogelX = 590; 
 var kogelY = 590;
@@ -134,35 +135,57 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   
   // vijand1
- var tekenVijand = function (){
+ /** console.log("voor while: vijandX = "+vijandX);
+  class vijand {
+    constructor(x, y, image) {
+      this.x = x;
+      this.y = y;
+      this.image = image;
+    }
+    draw() {
+      image(img2, this.x, this.y, 200, 200);
+    }
+    botsing() {
+      if (kogelX - this.x < 35 && 
+          kogelX - this.x > -35 &&
+          kogelY - this.y < 35 &&
+          kogelY - this.y > -35) {
+        console.log("botsingmetkogel")
+        this.y = this.y - 400;
+        punten = punten + 1;
+      }
+    }
+  }
+  console.log("na while: vijandX = "+vijandX);
+  let v1 = new vijand(100,100,img2);
+  console.log(v1.draw())
+  console.log(v1.botsing())*/
+ 
+tekenVijand = function (){
    fill("black")
    ellipse(vijandX, vijandY, 10, 10);
    image(img2, vijandX - 100, vijandY - 85, 200, 200);
  }
   // vijand2
  var tekenVijand2 = function (){
-   fill("red");
-   rect(vijand2X - 25, vijand2Y - 25, 50, 50);
    fill("black")
    ellipse(vijand2X, vijand2Y, 10, 10); 
-   image(img2, vijandX - 50, vijandY - 85, 200, 200); 
+   image(img2, vijand2X - 100, vijand2Y - 85, 200, 200); 
  }
 
   //vijand3
   var tekenVijand3 = function (){
-   fill("red");
-   rect(vijand3X - 25, vijand3Y - 25, 50, 50);
    fill("black")
    ellipse(vijand3X, vijand3Y, 10, 10);  
+   image(img2, vijand3X - 100, vijand3Y - 85, 200, 200);
   
  }  
   
   //vijand4
   var tekenVijand4 = function (){
-   fill("red");
-   rect(vijand4X - 25, vijand4Y - 25, 50, 50);
    fill("black")
    ellipse(vijand4X, vijand4Y, 10, 10);  
+   image(img2, vijand4X - 100, vijand4Y - 85, 200, 200);
  }
 
   console.log("voor while: vijandX = "+vijandX);
@@ -177,6 +200,7 @@ var tekenAlles = function () {
     vijandX = vijandX + 100;
   };
 */
+  
   var rij1 =[1, 1, 1, 1];
   var rij2 =[1, 1, 1, 1];
   var rij3 =[1, 1, 1, 1];
@@ -210,10 +234,10 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
-  if (spelerX - vijandX < 50 && 
-      spelerX - vijandX > -50 &&
-      spelerY - vijandY < 50 &&
-      spelerY - vijandY > -50) {
+  if (spelerX - vijandX < 150 && 
+      spelerX - vijandX > -150 &&
+      spelerY - vijandY < 150 &&
+      spelerY - vijandY > -150) {
     console.log("botsing")
     spelStatus = GAMEOVER;
     aantal = aantal + 1;
@@ -223,6 +247,23 @@ var checkGameOver = function () {
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
+
+var checkGameOver = function () {
+  if (spelerX - vijand2X < 150 && 
+      spelerX - vijand2X > -150 &&
+      spelerY - vijand2Y < 150 &&
+      spelerY - vijand2Y > -150) {
+    console.log("botsing")
+    spelStatus = GAMEOVER;
+    aantal = aantal + 1;
+    console.log("botsing "+ aantal)
+    return true; 
+  }
+  // check of HP 0 is , of tijd op is, of ...
+  return false;
+};
+
+
 
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
