@@ -39,7 +39,7 @@ var kogelX = 590;
 var kogelY = 590;
 
 var img; //plaatje speler
-var img2;
+var img2; //plaatje vijand
 
 var punten=0;
 
@@ -52,22 +52,24 @@ var punten=0;
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown (KEY_RIGHT)) {
+  if (keyIsDown (KEY_RIGHT) && spelerX < 1280) {
   spelerX = spelerX + 3;
 }
-  if (keyIsDown (KEY_LEFT)) {
+  if (keyIsDown (KEY_LEFT) && spelerX > 0) {
   spelerX = spelerX - 3;
 }
-  if (keyIsDown (KEY_UP)) {
+  if (keyIsDown (KEY_UP) && spelerY > 0) {
   spelerY = spelerY - 3;
 }
-  if (keyIsDown (KEY_DOWN)) {
+  if (keyIsDown (KEY_DOWN) && spelerY < 720) {
   spelerY = spelerY + 3;
 }
 
   // vijand
   // kogel
+  if(kogelY > -30) {
     kogelY = kogelY - 3;   
+  }
   if(keyIsDown (32)){
     kogelY = spelerY; 
     kogelX = spelerX;  
@@ -234,10 +236,10 @@ tekenVijand = function (){
  * anders return false
  */
 var checkGameOver = function () {
-  if (spelerX - vijandX < 150 && 
-      spelerX - vijandX > -150 &&
-      spelerY - vijandY < 150 &&
-      spelerY - vijandY > -150) {
+  if (spelerX - vijandX < 50 && 
+      spelerX - vijandX > -50 &&
+      spelerY - vijandY < 50 &&
+      spelerY - vijandY > -50) {
     console.log("botsing")
     spelStatus = GAMEOVER;
     aantal = aantal + 1;
@@ -249,10 +251,10 @@ var checkGameOver = function () {
 };
 
 var checkGameOver = function () {
-  if (spelerX - vijand2X < 150 && 
-      spelerX - vijand2X > -150 &&
-      spelerY - vijand2Y < 150 &&
-      spelerY - vijand2Y > -150) {
+  if (spelerX - vijand2X < 50 && 
+      spelerX - vijand2X > -50 &&
+      spelerY - vijand2Y < 50 &&
+      spelerY - vijand2Y > -50) {
     console.log("botsing")
     spelStatus = GAMEOVER;
     aantal = aantal + 1;
@@ -329,7 +331,8 @@ function draw() {
        
     
       if (keyIsDown(32)){//enter
-        spelerX = 400;
+        spelerX = 600;
+        spelerY = 600;
          spelStatus = SPELEN;
       }
      
