@@ -246,15 +246,30 @@ var checkGameOver = function () {
     console.log("botsing "+ aantal)
     return true; 
   }
-  // check of HP 0 is , of tijd op is, of ...
-  return false;
-};
-
-var checkGameOver = function () {
   if (spelerX - vijand2X < 50 && 
       spelerX - vijand2X > -50 &&
       spelerY - vijand2Y < 50 &&
       spelerY - vijand2Y > -50) {
+    console.log("botsing")
+    spelStatus = GAMEOVER;
+    aantal = aantal + 1;
+    console.log("botsing "+ aantal)
+    return true; 
+  }
+  if (spelerX - vijand3X < 50 && 
+      spelerX - vijand3X > -50 &&
+      spelerY - vijand3Y < 50 &&
+      spelerY - vijand3Y > -50) {
+    console.log("botsing")
+    spelStatus = GAMEOVER;
+    aantal = aantal + 1;
+    console.log("botsing "+ aantal)
+    return true; 
+  }
+  if (spelerX - vijand4X < 50 && 
+      spelerX - vijand4X > -50 &&
+      spelerY - vijand4Y < 50 &&
+      spelerY - vijand4Y > -50) {
     console.log("botsing")
     spelStatus = GAMEOVER;
     aantal = aantal + 1;
