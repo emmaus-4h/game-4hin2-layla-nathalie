@@ -12,6 +12,7 @@
 var aantal = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
+const GAMEWON = 3;
 var spelStatus = SPELEN;
 const UITLEG = 8;
 const KEY_LEFT = 37;
@@ -25,15 +26,14 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 350; // x-positie van vijand
 var vijandY = 200; // y-positie van vijand
 
-var vijand2X = 500; 
+var vijand2X = 540; 
 var vijand2Y = 200;
 
-var vijand3X = 650;
+var vijand3X = 730;
 var vijand3Y = 200;
 
-var vijand4X = 800;
+var vijand4X = 920;
 var vijand4Y = 200;
-
 
 var kogelX = 590; 
 var kogelY = 590;
@@ -41,7 +41,7 @@ var kogelY = 590;
 var img; //plaatje speler
 var img2; //plaatje vijand
 
-var punten=0;
+var punten = 0;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -128,6 +128,14 @@ var verwerkBotsing = function () {
 
 };
 
+//vijanden terug zetten
+var reset = function () {  
+  vijandY = 200;
+  vijand2Y = 200;   
+  vijand3Y = 200;
+  vijand4Y = 200; 
+};
+
 /**
  * Tekent spelscherm
  */
@@ -137,7 +145,7 @@ var tekenAlles = function () {
   rect(0, 0, 1280, 720);
   
   // vijand1
- /** console.log("voor while: vijandX = "+vijandX);
+  /** console.log("voor while: vijandX = "+vijandX);
   class vijand {
     constructor(x, y, image) {
       this.x = x;
@@ -163,17 +171,17 @@ var tekenAlles = function () {
   console.log(v1.draw())
   console.log(v1.botsing())*/
  
-tekenVijand = function (){
-   fill("black")
-   ellipse(vijandX, vijandY, 10, 10);
-   image(img2, vijandX - 100, vijandY - 85, 200, 200);
- }
+  var tekenVijand = function () {
+    fill("black")
+    ellipse(vijandX, vijandY, 10, 10);
+    image(img2, vijandX - 100, vijandY - 85, 200, 200);
+  }
   // vijand2
- var tekenVijand2 = function (){
-   fill("black")
-   ellipse(vijand2X, vijand2Y, 10, 10); 
-   image(img2, vijand2X - 100, vijand2Y - 85, 200, 200); 
- }
+  var tekenVijand2 = function (){
+    fill("black")
+    ellipse(vijand2X, vijand2Y, 10, 10); 
+    image(img2, vijand2X - 100, vijand2Y - 85, 200, 200); 
+  }
 
   //vijand3
   var tekenVijand3 = function (){
@@ -280,7 +288,14 @@ var checkGameOver = function () {
   return false;
 };
 
-
+var checkGameWon = function () {
+  if (punten == 4) {
+    console.log("gewonnen")
+    spelstatus = GAMEOVER;
+    return true;
+  }
+  return false;
+};
 
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
@@ -322,7 +337,10 @@ function draw() {
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
-    console .log("spelen");
+    if (checkGameWon()) {
+      spelStatus = GAMEWON;
+    }
+    console.log("spelen");
   }
   // teken game-over scherm
   if (spelStatus === GAMEOVER) {
@@ -330,10 +348,25 @@ function draw() {
     textSize(50);
     fill("black");
     text("game over, druk op enter voor uitleg", 250, 350);
-    if (keyIsDown(13)){    //spatie
+    if (keyIsDown(13)){    //enter
      spelStatus = UITLEG;
     }
   }
+
+   if (spelStatus === GAMEWON) {
+    console.log("game won");
+    textSize(50);
+    fill("black");
+    text("game won, \ndruk op spatie om opnieuw te beginnen", 250, 350);
+    if (keyIsDown(32)){    //spatie
+     spelerX = 600;
+     spelerY = 600;
+     punten = 0;
+     reset();
+     spelStatus = SPELEN;
+    }
+  }
+  
 
   // teken uitleg-over scherm   
   if (spelStatus === UITLEG) {
@@ -345,10 +378,12 @@ function draw() {
    text("uitleg: Probeer alle vijanden te raken met de kogel.\n Om je karakter te  bewegen gebruik de pijl toetsen.\n Door spatie te krijg je je kogel terug en door spatie los te laten schiet je hem af.\n Druk nu op spatie om opnieuw te beginnen", 200, 250);
        
     
-      if (keyIsDown(32)){//enter
+      if (keyIsDown(32)){//spatie
         spelerX = 600;
         spelerY = 600;
-         spelStatus = SPELEN;
+        punten = 0;
+        reset();
+        spelStatus = SPELEN;
       }
      
      
