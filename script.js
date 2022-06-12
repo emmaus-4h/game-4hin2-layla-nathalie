@@ -10,10 +10,11 @@
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
 var aantal = 0;
+const BEGINSCHERM = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
 const GAMEWON = 3;
-var spelStatus = SPELEN;
+var spelStatus = BEGINSCHERM;
 const UITLEG = 8;
 const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
@@ -26,7 +27,7 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 350; // x-positie van vijand
 var vijandY = 200; // y-positie van vijand
 
-var vijand2X = 540; 
+var vijand2X = 535; 
 var vijand2Y = 200;
 
 var vijand3X = 730;
@@ -40,6 +41,7 @@ var kogelY = 590;
 
 var img; //plaatje speler
 var img2; //plaatje vijand
+var img3; //achtergrond plaatje
 
 var punten = 0;
 
@@ -88,37 +90,37 @@ var verwerkBotsing = function () {
   
     
   // botsing kogel tegen vijand
-  if (kogelX - vijandX < 35 && 
-      kogelX - vijandX > -35 &&
-      kogelY - vijandY < 35 &&
-      kogelY - vijandY > -35) {
+  if (kogelX - vijandX < 55 && 
+      kogelX - vijandX > -55 &&
+      kogelY - vijandY < 55 &&
+      kogelY - vijandY > -55) {
     console.log("botsingmetkogel")
     vijandY = vijandY - 400;
     punten = punten + 1;
   }
 
-  if (kogelX - vijand2X < 35 && 
-      kogelX - vijand2X > -35 &&
-      kogelY - vijand2Y < 35 &&
-      kogelY - vijand2Y > -35) {
+  if (kogelX - vijand2X < 55 && 
+      kogelX - vijand2X > -55 &&
+      kogelY - vijand2Y < 55 &&
+      kogelY - vijand2Y > -55) {
     console.log("botsingmetkogel")
     vijand2Y = vijand2Y - 400;
     punten = punten + 1; 
   }
 
-  if (kogelX - vijand3X < 35 && 
-      kogelX - vijand3X > -35 &&
-      kogelY - vijand3Y < 35 &&
-      kogelY - vijand3Y > -35) {
+  if (kogelX - vijand3X < 55 && 
+      kogelX - vijand3X > -55 &&
+      kogelY - vijand3Y < 55 &&
+      kogelY - vijand3Y > -55) {
     console.log("botsingmetkogel")
     vijand3Y = vijand3Y - 400;
     punten = punten + 1;
   }
 
-  if (kogelX - vijand4X < 35 && 
-      kogelX - vijand4X > -35 &&
-      kogelY - vijand4Y < 35 &&
-      kogelY - vijand4Y > -35) {
+  if (kogelX - vijand4X < 55 && 
+      kogelX - vijand4X > -55 &&
+      kogelY - vijand4Y < 55 &&
+      kogelY - vijand4Y > -55) {
     console.log("botsingmetkogel")
     vijand4Y = vijand4Y - 400;
     punten = punten + 1;
@@ -141,8 +143,7 @@ var reset = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  fill("blue");
-  rect(0, 0, 1280, 720);
+  background(img3);
   
   // vijand1
   /** console.log("voor while: vijandX = "+vijandX);
@@ -234,7 +235,7 @@ var tekenAlles = function () {
 
   // punten en health
  fill("yellow");
-  textSize(40);
+  textSize(50);
   text(punten, 100, 100);
 
 };
@@ -309,6 +310,7 @@ var checkGameWon = function () {
 function preload() {
   img = loadImage('spacecraft.png');
   img2 = loadImage('vijand.png');
+  img3 = loadImage('achtgrondgame.jpg')
 }
 
 /**
@@ -321,7 +323,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background(img3);
 }
 
 /**
@@ -330,6 +332,22 @@ function setup() {
  * uitgevoerd door de p5 library, nadat de setup functie klaar is
  */
 function draw() {
+  if (spelStatus === BEGINSCHERM) {
+    background('blue'); 
+   textSize(55);
+   textFont('Georgia');
+    text("welkom druk op enter om te beginnen \nof op shift voor de uitleg", 200, 300);
+    
+    console.log("start scherm");
+    if (keyIsDown(13)){    //enter
+     spelStatus = SPELEN;
+    }
+    console.log("uitleg"); 
+    if (keyIsDown(16)) {  //shift
+      spelStatus = UITLEG;
+    }
+  }
+  
   if (spelStatus === SPELEN) {
     beweegAlles();
     verwerkBotsing();
@@ -346,6 +364,8 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     console.log("game over");
     textSize(50);
+    textFont('Georgia');
+    filter(GRAY);
     fill("black");
     text("game over, druk op enter voor uitleg", 250, 350);
     if (keyIsDown(13)){    //enter
@@ -362,8 +382,9 @@ function draw() {
      spelerX = 600;
      spelerY = 600;
      punten = 0;
+     kogelY = -30;
      reset();
-     spelStatus = SPELEN;
+     spelStatus = BEGINSCHERM;
     }
   }
   
@@ -372,6 +393,7 @@ function draw() {
   if (spelStatus === UITLEG) {
     console.log("uitleg");
    textSize(30);
+   textFont('Georgia');
     fill("yellow")
     rect(0,0, 1280, 720);
    fill("black");
@@ -383,7 +405,7 @@ function draw() {
         spelerY = 600;
         punten = 0;
         reset();
-        spelStatus = SPELEN;
+        spelStatus = BEGINSCHERM;
       }
      
      

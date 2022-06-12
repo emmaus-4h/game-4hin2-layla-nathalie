@@ -6,22 +6,21 @@ Gemaakt door:
 - *Nathalie Hardenberg*
 
 ### Beschrijving
-* probeer alle vijanden af te schieten voordat de vijanden jou raken. vijanden vallen naar beneden en jij moet ze proberen af te schieten*
+* probeer alle vijanden af te schieten. als je alle vijanden hebt afgeschoten win je. raak ze niet aan want dan ben jij af.*
 
 ## Mijn planning
 - [x]stap 1. bedenk de planing 
 - [x]stap 2. bedenk en maak een karakter/poppetje
 - [x]stap 3. laat het karakter bewegen
-- [ ]stap 4. maak de achtergrond
+- [x]stap 4. maak de achtergrond
 - [x]stap 5. bedenk en maak vijanden
-- [ ]stap 6. laat de vijanden bewegen
-- [ ]stap 8. maak een punten telling
-- [x]stap 9. maak een game-over scherm
-- [x]stap 10. maak een uitlegscherm
-- [x]stap 11. als je de vijand aanraakt is het game-over
-- [ ]stap 12. details afmaken
-- [ ]stap 13. zorg dat alles duidelijk is en alles werkt
-
+- [x]stap 7. maak een punten telling
+- [x]stap 8. maak een game-over scherm
+- [x]stap 9. maak een uitlegscherm
+- [x]stap 10. als je de vijand aanraakt is het game-over
+- [x]stap 11. details afmaken
+- [x]stap 12. zorg dat alles duidelijk is en alles werkt
+- [x]stap 13. beginscherm maken
 ### Basisstappen
 Basis: uitleg, spelen, afgaan en punten
 - [x] 1. maak index.html, style.css en script.js met canvas
@@ -31,13 +30,13 @@ Basis: uitleg, spelen, afgaan en punten
         - Zet je code in de functie beweegAlles()
         - Kies de afmeting van speler
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
-- [ ] 4. *(pas de volgende stappen in de planning zelf aan)*
+- [x] 4. *(pas de volgende stappen in de planning zelf aan)*
 - [x] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
 - [x] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. beweeg de tegenspeler of je bal
-- [ ] x. zet punten op het scherm 
-- [ ] x. zorg dat je punten kunt scoren
-- [ ] x. zorg dat je af kunt
+- [x] x. beweeg de tegenspeler of je bal
+- [x] x. zet punten op het scherm 
+- [x] x. zorg dat je punten kunt scoren
+- [x] x. zorg dat je af kunt
 - [x] x. maak game-over-scherm
 - [x] x. maak uitlegscherm
 
@@ -55,8 +54,8 @@ Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
 
 ### Ideeen voor uitbreidingen
 Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
-- [ ] Gebruik plaatjes voor de vijanden
-- [ ] Animeer speler
+- [x] Gebruik plaatjes voor de vijanden
+- [x] Animeer speler
 - [ ] Laat badges vallen die extra's aan speler geven
 - [ ] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand
 - [ ] Maak andere vijanden bij toenemen tekenVijand
